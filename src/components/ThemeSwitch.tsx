@@ -13,7 +13,7 @@ const ThemeSwitch = () => {
         document.body.classList.toggle('dark', isDarkMode)
         document.body.classList.toggle('light', !isDarkMode)
         localStorage.setItem('user-theme', isDarkMode ? 'dark' : 'light')
-    }, [])
+    }, [isDarkMode])
 
     return (
         <div className="flex justify-center items-center hover:border-b border-b-black dark:border-b-white">

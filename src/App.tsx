@@ -4,12 +4,13 @@ import NotFound from "./components/NotFound";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useEffect } from "react";
 import { useSocket } from "./zustand/store";
+const server = import.meta.env.VITE_WEBSOCKET_SERVER
 
 const App = () => {
 
   useEffect(() => {
     console.log('Connecting with WebSocket server...')
-    const connection = new WebSocket("ws://192.168.1.104:8080")
+    const connection = new WebSocket(server)
 
     connection.onopen = () => {
     console.log('Connection established...')

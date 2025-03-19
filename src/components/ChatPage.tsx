@@ -25,9 +25,9 @@ const ChatPage = () => {
     async function shareBubble() {
         try {
             if (!navigator.clipboard || !navigator.clipboard.writeText) {
-                return prompt("Copy this link to share:", `http://192.168.1.104:5173/join/${id}`)
+                return prompt("Copy this link to share:", `${window.location.origin}/join/${id}`)
             }
-            await navigator.clipboard.writeText(`http://192.168.1.104:5173/join/${id}`)
+            await navigator.clipboard.writeText(`${window.location.origin}/join/${id}`)
             alert('Link copied to clipboard')
         } catch (e) {
             alert('Failed to get link')
